@@ -261,12 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fcdcf1815199d847b6aac962c26dfec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerUnitPrefab: {fileID: 6185719744332677056, guid: 3e96b31e5099a104a8eeffbd30709b10, type: 3}
-  _playerFigureMaterial: {fileID: 2100000, guid: 1be803dff2d201f4bbb6bb5652eb2df0, type: 2}
-  _playerHeight: 8
-  _branchesCount: 4
-  _gateWidth: 5
-  _rotationSpeed: 500
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +389,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88d7f50b93e5d1c4d9d82edb23489900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _barrierUnitPrefab: {fileID: 6185719744332677056, guid: 3e96b31e5099a104a8eeffbd30709b10, type: 3}
 --- !u!1 &1445320679
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0873a0f191fb4c428893c6a84375dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameSettings: {fileID: 11400000, guid: ead90f064ced3a14593c35615b6d34fe, type: 2}
 --- !u!4 &1445320681
 Transform:
   m_ObjectHideFlags: 0
@@ -499,10 +493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6860ff800f310c34f99fbe71db9a6176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fieldUnitPrefab: {fileID: 6185719744332677056, guid: 3e96b31e5099a104a8eeffbd30709b10, type: 3}
-  _fieldFigureMaterial: {fileID: 2100000, guid: a25212dec98cbba46b6e2840c59a0195, type: 2}
-  _fieldWidth: 11
-  _fieldLenght: 100
 --- !u!4 &1509511887
 Transform:
   m_ObjectHideFlags: 0
@@ -563,7 +553,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c39496d6dbc1ee4fa86b423a6be05ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gateUnitPrefab: {fileID: 6185719744332677056, guid: 3e96b31e5099a104a8eeffbd30709b10, type: 3}
-  _gateFigureMaterial: {fileID: 2100000, guid: 36f298c7453c1e343ac7b00d02c97d3f, type: 2}
-  _gateWidth: 7
-  _playerHeight: 8

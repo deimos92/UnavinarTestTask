@@ -9,7 +9,7 @@ namespace UnavinarTestTask.Assets.Scripts.PlayerInput
         public delegate void StartTouch(Vector2 position, float time);
         public event StartTouch OnStartTouch;
         public delegate void EndTouch(Vector2 position, float time);
-        public event StartTouch OnEndTouch;
+        public event EndTouch OnEndTouch;
 
         private PlayerControl _playerControl;
         private Camera _mainCamera;

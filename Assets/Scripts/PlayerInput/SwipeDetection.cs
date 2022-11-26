@@ -22,11 +22,7 @@ namespace UnavinarTestTask.Assets.Scripts.PlayerInput
 
         private Vector2 _endPosition;
         private float _endTime;
-
-        private void Awake()
-        {
-
-        }
+        
 
         private void OnEnable()
         {
@@ -57,7 +53,6 @@ namespace UnavinarTestTask.Assets.Scripts.PlayerInput
         {
             if (Vector3.Distance(_startPosition, _endPosition) >= _minimumDistance && (_endTime - _startTime) <= _maximumTime)
             {
-                Debug.DrawLine(_startPosition, _endPosition, Color.red, 5f);
                 Vector3 direction = _endPosition - _startPosition;
                 Vector2 direction2D = new Vector2(direction.x, direction.y).normalized;
                 SwipeDirection(direction2D);

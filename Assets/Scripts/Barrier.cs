@@ -1,38 +1,27 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UnavinarTestTask.Assets.Scripts
 {
     public class Barrier : MonoBehaviour
     {
-        private List<int[,]> _slices = new List<int[,]>();
-        private Vector3 _offset = new Vector3(-1.5f, 2f, 0);
-
-        [SerializeField]
         private GameObject _barrierUnitPrefab;
+        private Vector3 _offset;
+        private int[,] _barrierArray; 
+        
 
-
-        private void Start()
+        private void Awake()
         {
-            _slices = FindObjectOfType<PlayerFigure>()._figureSlises;
-            InstantiateBarrier();
+            SetupThis();
+            FigurePlacer.PlaceFigure(_barrierUnitPrefab, _barrierArray, _offset, transform);
         }
-
-        private void InstantiateBarrier()
+        
+        private void SetupThis()
         {
-            var slice = _slices[Random.Range(0, _slices.Count)];
+            _barrierUnitPrefab = Game.instance.GameSettings.BarrierUnitPrefab;
+            _offset = Game.instance.GameSettings.BarrierOffset;
 
-            for (int width = 0; width < slice.GetLength(0); width++)
-            {
-                for (int height = 0; height < slice.GetLength(1); height++)
-                {
-                    if (slice[width, height] == 0)
-                    {
-                        var item = Instantiate(_barrierUnitPrefab, transform);
-                        item.transform.localPosition = _offset + new Vector3(width, height, 0);
-                    }
-                }
-            }
+            _barrierArray = Game.instance.BarriersArrays[Random.Range(0, 4)];
         }
+        
     }
 }
