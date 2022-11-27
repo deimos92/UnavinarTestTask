@@ -5,6 +5,15 @@ namespace UnavinarTestTask.Assets.Scripts
     [CreateAssetMenu]
     public class GameSettings : ScriptableObject
     {
+        [Header("GamePlay")]
+        [SerializeField]
+        private int _maxHitsCount = 3;
+        public int MaxHitsCount => _maxHitsCount;
+
+        [SerializeField]
+        private float _playerMaxSpeed = 100;
+        public float PlayerMaxSpeed => _playerMaxSpeed;
+
         [Header("Player Settings")]
         [SerializeField]
         private GameObject _playerUnitPrefab;
@@ -64,6 +73,5 @@ namespace UnavinarTestTask.Assets.Scripts
         [SerializeField]
         private int _fieldLenght = 100;
         public int FieldLenght => _fieldLenght;
-
     }
 }

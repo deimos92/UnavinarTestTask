@@ -11,8 +11,7 @@ namespace UnavinarTestTask.Assets.Scripts
 
         private void Awake()
         {
-            SetupThis();
-            FigurePlacer.PlaceFigure(_barrierUnitPrefab, _barrierArray, _offset, transform);
+            SetupThis();            
         }
         
         private void SetupThis()
@@ -21,7 +20,7 @@ namespace UnavinarTestTask.Assets.Scripts
             _offset = Game.instance.GameSettings.BarrierOffset;
 
             _barrierArray = Game.instance.BarriersArrays[Random.Range(0, 4)];
+            FigurePlacer.PlaceFigure(_barrierUnitPrefab, _barrierArray, _offset, transform);
         }
-        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnavinarTestTask.Assets.Scripts.PlayerInput;
 using UnityEngine;
 
 namespace UnavinarTestTask.Assets.Scripts
@@ -12,9 +13,22 @@ namespace UnavinarTestTask.Assets.Scripts
         {
             _objectToRotate = transform;
             _rotationSpeed = Game.instance.GameSettings.RotationSpeed;
+            
+            SwipeDetection.OnSwipeLeft += SwipeDetection_OnSwipeLeft;
+            SwipeDetection.OnSwipeRight += SwipeDetection_OnSwipeRight;
         }
 
-        private IEnumerator TurnRight()
+        private void SwipeDetection_OnSwipeRight()
+        {
+            StartCoroutine(TurnRight());    
+        }
+
+        private void SwipeDetection_OnSwipeLeft()
+        {
+            StartCoroutine(TurnLeft());
+        }
+
+        public IEnumerator TurnRight()
         {
             float currentAngle = 0f;
             float targetAngle = 90f;
@@ -34,7 +48,7 @@ namespace UnavinarTestTask.Assets.Scripts
             }
         }
 
-        private IEnumerator TurnLeft()
+        public IEnumerator TurnLeft()
         {
             float currentAngle = 0f;
             float targetAngle = -90f;

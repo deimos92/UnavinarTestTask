@@ -5,10 +5,7 @@ namespace UnavinarTestTask.Assets.Scripts
 {
     public class PlayerFigure : MonoBehaviour
     {
-        private GameObject _playerUnitPrefab;
-        private int _gateWidth;
-        private int _playerHeight;
-        private int _branchesCount;
+        private GameObject _playerUnitPrefab;        
         private Vector3 _offset;
 
         private int[,,] _figure;
@@ -22,10 +19,7 @@ namespace UnavinarTestTask.Assets.Scripts
         
         private void SetupThis()
         {
-            _playerUnitPrefab = Game.instance.GameSettings.PlayerUnitPrefab;
-            _gateWidth = Game.instance.GameSettings.GateWidth - 2;
-            _playerHeight = Game.instance.GameSettings.PlayerHeight;
-            _branchesCount = Game.instance.GameSettings.BranchesCount;
+            _playerUnitPrefab = Game.instance.GameSettings.PlayerUnitPrefab;           
             _offset = Game.instance.GameSettings.PlayerOffset;
             _figure = Game.instance.PlayerFigureArray;
         }

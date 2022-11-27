@@ -48,54 +48,6 @@
                     "isPartOfComposite": false
                 }
             ]
-        },
-        {
-            "name": "Keyboard",
-            "id": "d5ce1fe4-f738-43a1-96ec-d4fff7cf2e5f",
-            "actions": [
-                {
-                    "name": "TurnRight",
-                    "type": "Button",
-                    "id": "70a3f9be-60ed-40c2-a5c7-00e8936f6efc",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "TurnLeft",
-                    "type": "Button",
-                    "id": "580657a4-c232-418e-8667-d2289dfab5a1",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "cdc7465d-fd31-4fc8-9439-93155fb33e6d",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TurnRight",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1c3db074-3cd4-4a6c-b214-3a1f4b966aa2",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TurnLeft",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
         }
     ],
     "controlSchemes": []

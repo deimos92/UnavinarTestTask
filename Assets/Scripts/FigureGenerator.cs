@@ -24,7 +24,7 @@ namespace UnavinarTestTask.Assets.Scripts
             {
                 var direction = DirectionToVector(GetRandomDirection());
                 var branchAtHeight = Random.Range(0, yFigureSize);
-                var branchLength = Random.Range(1, xFigureSize / 2);
+                var branchLength = Random.Range(1, xFigureSize / 2 + 1);
 
                 for (int branchElement = 1; branchElement <= branchLength; branchElement++)
                 {

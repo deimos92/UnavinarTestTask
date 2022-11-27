@@ -33,7 +33,7 @@ namespace UnavinarTestTask.Assets.Scripts.PlayerInput
         private void Start()
         {
             _playerControl.Touch.PrimaryContact.started += ctx => StartTouchPrimary(ctx);
-            _playerControl.Touch.PrimaryContact.canceled += ctx => EndTouchPrimary(ctx);
+            _playerControl.Touch.PrimaryContact.canceled += ctx => EndTouchPrimary(ctx);            
         }        
 
         private void StartTouchPrimary(InputAction.CallbackContext ctx)

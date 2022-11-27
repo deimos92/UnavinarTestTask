@@ -22,7 +22,10 @@ namespace UnavinarTestTask.Assets.Scripts.PlayerInput
 
         private Vector2 _endPosition;
         private float _endTime;
-        
+
+        public static event Action OnSwipeLeft;
+        public static event Action OnSwipeRight;
+
 
         private void OnEnable()
         {
@@ -71,10 +74,12 @@ namespace UnavinarTestTask.Assets.Scripts.PlayerInput
             }
             else if (Vector2.Dot(Vector2.left, direction) > _directionThreshold)
             {
+                OnSwipeLeft?.Invoke();
                 Debug.Log("Swipe LEFT");
             }
             else if (Vector2.Dot(Vector2.right, direction) > _directionThreshold)
             {
+                OnSwipeRight?.Invoke();
                 Debug.Log("Swipe RIGHT");
             }
         }
