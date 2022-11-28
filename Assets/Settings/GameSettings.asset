@@ -12,19 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ce8253cb22ef745807243940f3fce1, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  _maxHitsCount: 3
+  _maxHitsCount: 1
   _playerMaxSpeed: 20
   _playerUnitPrefab: {fileID: 6185719744332677056, guid: 57ababc6ddf8b3c47b15c336279f40de, type: 3}
   _playerOffset: {x: 0.5, y: 2, z: -0.5}
   _playerHeight: 8
   _branchesCount: 4
   _rotationSpeed: 500
+  _gatesCount: 8
   _gateUnitPrefab: {fileID: 6185719744332677056, guid: a4a347c1b1fad2b47a80996923487f62, type: 3}
   _gateWidth: 7
   _gateOffset: {x: -2.5, y: 2, z: 0}
   _barrierUnitPrefab: {fileID: 6185719744332677056, guid: 3e96b31e5099a104a8eeffbd30709b10, type: 3}
   _barrierOffset: {x: -1.5, y: 2, z: 0}
-  _fieldUnitPrefab: {fileID: 6185719744332677056, guid: e81d17b5bd3b7534ba97ea22cb995d5b, type: 3}
-  _fieldOffset: {x: 5.5, y: 0, z: -2}
+  _fieldUnitPrefab: {fileID: 1515145354039032382, guid: e81d17b5bd3b7534ba97ea22cb995d5b, type: 3}
+  _fieldOffset: {x: 0, y: 0.99, z: -4}
   _fieldWidth: 11
   _fieldLenght: 500
+  _finishUnitPrefab: {fileID: 2009581405327368512, guid: cd70724cae6b1e6479c9ff338e788da8, type: 3}
+  _finishOffset: {x: 0, y: 2, z: -0.5}
