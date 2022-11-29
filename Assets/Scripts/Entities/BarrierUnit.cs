@@ -29,7 +29,7 @@ namespace UnavinarTestTask.Assets.Scripts.Entities
                 }
             }
 
-            if (other.gameObject.layer == 8)
+            if (other.gameObject.layer == 10)
             {
                 Destroy(gameObject);
             }

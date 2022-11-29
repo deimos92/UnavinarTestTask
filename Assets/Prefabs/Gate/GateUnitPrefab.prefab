@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7701825425422220831}
   - component: {fileID: 1377873868429035649}
   - component: {fileID: 7356978606597067870}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6815010533731853690}
   - component: {fileID: 2460046503285229016}
   - component: {fileID: -314389452399896890}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GateUnitPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

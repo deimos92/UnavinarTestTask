@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnavinarTestTask.Assets.Scripts.Game;
+using UnavinarTestTask.Assets.Scripts.Player;
 
 namespace UnavinarTestTask.Assets.Scripts.Entities
 {
@@ -28,14 +29,19 @@ namespace UnavinarTestTask.Assets.Scripts.Entities
             FigurePlacer.PlaceFigure(_gateUnitPrefab, _gateArray, _offset, transform);
 
             _collider = GetComponent<BoxCollider>();
-            _collider.size = new Vector3(gameSettings.GateWidth, gameSettings.PlayerHeight + 1, 1);
+            _collider.size = new Vector3(gameSettings.GateWidth, gameSettings.PlayerHeight + 1, 1.5f);
 
-            _collider.center = new Vector3(0, 6.5f, 0.5f);
+            _collider.center = new Vector3(0, 7.5f, 0.5f);
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerExit(Collider other)
         {
-            OnCrossing?.Invoke();
+            if (other.gameObject.layer == 7)
+            {
+                OnCrossing?.Invoke();
+                Level.Instance.gameObject.GetComponent<PointsCounter>()?.CrossingGate();
+                _collider.enabled = false;
+            }            
         }
     }
 }

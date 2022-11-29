@@ -6,6 +6,7 @@ namespace UnavinarTestTask.Assets.Scripts.Entities
     {
         private Animation _animation;
         private Gate _gateParent;
+        
 
         private void Awake()
         {

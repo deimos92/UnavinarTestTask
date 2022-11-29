@@ -1,3 +1,4 @@
+using System;
 using UnavinarTestTask.Assets.Scripts.Game;
 using UnityEngine;
 
@@ -10,11 +11,12 @@ namespace UnavinarTestTask.Assets.Scripts.Player
 
         private int[,,] _figure;
 
+        public static event Action OnFinish;      
+
 
         private void Awake()
         {
-            SetupThis();
-            FigurePlacer.PlaceFigure(_playerUnitPrefab, _figure, _offset, transform);
+            SetupThis();            
         }
 
         private void SetupThis()
@@ -22,6 +24,17 @@ namespace UnavinarTestTask.Assets.Scripts.Player
             _playerUnitPrefab = Level.Instance.GameSettings.PlayerUnitPrefab;
             _offset = Level.Instance.GameSettings.PlayerOffset;
             _figure = Level.Instance.PlayerFigureArray;
+            FigurePlacer.PlaceFigure(_playerUnitPrefab, _figure, _offset, transform);
+        }
+
+       
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.gameObject.layer == 11)
+            {
+                OnFinish?.Invoke();
+            }
         }
 
 

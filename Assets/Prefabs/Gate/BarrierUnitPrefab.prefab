@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7701825425422220831}
   - component: {fileID: 1377873868429035649}
   - component: {fileID: 7356978606597067870}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1982629048090185408}
   - component: {fileID: 6446794357618711990}
   - component: {fileID: 2587218957861237510}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: BarrierUnitPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: 
   _maxHitsCount: 1
-  _playerMaxSpeed: 20
+  _playerMaxSpeed: 0.3
   _playerUnitPrefab: {fileID: 6185719744332677056, guid: 57ababc6ddf8b3c47b15c336279f40de, type: 3}
   _playerOffset: {x: 0.5, y: 2, z: -0.5}
   _playerHeight: 8

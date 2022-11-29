@@ -1,5 +1,5 @@
+using UnavinarTestTask.Assets.Scripts.Game;
 using UnityEngine;
-using UnavinarTestTask.Assets.Scripts.Entities;
 
 namespace UnavinarTestTask.Assets.Scripts.Player
 {
@@ -26,10 +26,10 @@ namespace UnavinarTestTask.Assets.Scripts.Player
         private void SetupOther()
         {
             PlayerUnit.OnHit += PlayerUnit_OnHit;
-            PlayerUnit.OnFinish += PlayerUnit_OnFinish;            
+            PlayerFigure.OnFinish += PlayerFigure_OnFinish;            
         }
 
-        private void PlayerUnit_OnFinish()
+        private void PlayerFigure_OnFinish()
         {
             isFinished = true;
             StopAndRotate();
@@ -53,14 +53,18 @@ namespace UnavinarTestTask.Assets.Scripts.Player
             }
             else
             {
-                PlayerUnit_OnFinish();
+                PlayerFigure_OnFinish();
             }
             Debug.Log(_currentVelocity);
         }
 
         private void Accelerating()
         {
-            _currentVelocity += (_acceleration * Time.deltaTime) / 2;
+            if (_currentVelocity < Level.Instance.GameSettings.PlayerMaxSpeed)
+            {
+                _currentVelocity += (_acceleration * Time.deltaTime) / 2;
+            }
+            
             transform.position += new Vector3(0, 0, 1) * _currentVelocity;
         }
 

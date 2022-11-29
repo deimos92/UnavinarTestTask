@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5634242259912319055}
   - component: {fileID: 17762292672397145}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: FieldUnitPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 3163741918548938920}
   - component: {fileID: 365324479817303212}
   - component: {fileID: 5928154386154232305}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
