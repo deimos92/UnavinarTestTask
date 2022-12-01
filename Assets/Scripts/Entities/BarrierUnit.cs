@@ -6,14 +6,13 @@ namespace UnavinarTestTask.Assets.Scripts.Entities
     public class BarrierUnit : MonoBehaviour
     {
         private Rigidbody _rootRigidbody;
-        private int _hitsCount;
-        private int _maxHitsCount;
+        private int _hitsCount = 0;
+        private int _maxHitsCount;        
 
-        private void Awake()
+        private void Start()
         {
             _maxHitsCount = Level.Instance.GameSettings.MaxHitsCount;
             _rootRigidbody = GetComponentInParent<Rigidbody>();
-            _hitsCount = 0;
         }
 
         private void OnTriggerEnter(Collider other)

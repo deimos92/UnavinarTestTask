@@ -2,8 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace UnavinarTestTask.Assets.Scripts.Game
-{
-    //[DefaultExecutionOrder(-2)]
+{    
     public class Level : MonoBehaviour
     {
         [SerializeField]

@@ -9,7 +9,6 @@ namespace UnavinarTestTask.Assets.Scripts.Entities
         private Vector3 _offset;
         private int[,] _barrierArray;
 
-
         private void Awake()
         {
             SetupThis();

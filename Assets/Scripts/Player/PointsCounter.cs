@@ -13,17 +13,16 @@ namespace UnavinarTestTask.Assets.Scripts.Player
         public static int CurrentMultiplier { get; private set; } = 1;
 
 
-        private void Start()
+        private void OnEnable()
         {
             PlayerUnit.OnHit += PlayerUnit_OnHit;
             PlayerFigure.OnFinish += PlayerFigure_OnFinish;
-            _player = PlayerFigure.PlayerTransform;
         }
 
-        private void PlayerFigure_OnFinish()
-        {
-            IsFinish = true;
-        }
+        private void Start()
+        {            
+            _player = PlayerFigure.PlayerTransform;
+        }        
 
         private void Update()
         {
@@ -36,6 +35,23 @@ namespace UnavinarTestTask.Assets.Scripts.Player
                     LevelUI.Instance.Gameplay.ShowPoints(CurrentPoints += addingPoints);
                 }
             }                                 
+        }
+
+        private void OnDisable()
+        {
+            PlayerUnit.OnHit -= PlayerUnit_OnHit;
+            PlayerFigure.OnFinish -= PlayerFigure_OnFinish;
+        }
+
+        private void PlayerFigure_OnFinish()
+        {
+            IsFinish = true;
+        }
+
+        private void PlayerUnit_OnHit()
+        {
+            _hitsCounter += 1;
+            CurrentMultiplier = 1;
         }
 
         public static void CrossingGate()
@@ -53,11 +69,7 @@ namespace UnavinarTestTask.Assets.Scripts.Player
             }                     
         }
 
-        private void PlayerUnit_OnHit()
-        {
-            _hitsCounter += 1;
-            CurrentMultiplier = 1;
-        }
+        
 
        
             

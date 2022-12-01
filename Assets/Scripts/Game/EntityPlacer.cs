@@ -2,8 +2,7 @@
 using Cinemachine;
 
 namespace UnavinarTestTask.Assets.Scripts.Game
-{
-    //[DefaultExecutionOrder(-1)]
+{   
     public class EntityPlacer : MonoBehaviour
     {
         [SerializeField]

@@ -18,27 +18,10 @@ namespace UnavinarTestTask.Assets.Scripts.Player
         private bool isFinished = false;
 
 
-        private void Start()
-        {
-            SetupOther();
-        }
-
-        private void SetupOther()
+        private void OnEnable()
         {
             PlayerUnit.OnHit += PlayerUnit_OnHit;
-            PlayerFigure.OnFinish += PlayerFigure_OnFinish;            
-        }
-
-        private void PlayerFigure_OnFinish()
-        {
-            isFinished = true;
-            StopAndRotate();
-        }        
-
-        private void PlayerUnit_OnHit()
-        {
-            isHit = true;
-            ShortStopAndRebound();
+            PlayerFigure.OnFinish += PlayerFigure_OnFinish;
         }
 
         private void FixedUpdate()
@@ -54,8 +37,26 @@ namespace UnavinarTestTask.Assets.Scripts.Player
             else
             {
                 PlayerFigure_OnFinish();
-            }            
+            }
         }
+
+        private void OnDisable()
+        {
+            PlayerUnit.OnHit -= PlayerUnit_OnHit;
+            PlayerFigure.OnFinish -= PlayerFigure_OnFinish;
+        }
+
+        private void PlayerFigure_OnFinish()
+        {
+            isFinished = true;
+            StopAndRotate();
+        }        
+
+        private void PlayerUnit_OnHit()
+        {
+            isHit = true;
+            ShortStopAndRebound();
+        }        
 
         private void Accelerating()
         {

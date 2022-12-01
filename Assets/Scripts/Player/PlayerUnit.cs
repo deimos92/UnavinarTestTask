@@ -11,7 +11,7 @@ namespace UnavinarTestTask.Assets.Scripts.Player
         
         public static event Action OnHit;       
 
-        private void Awake()
+        private void Start()
         {            
             _maxHitsCount = Level.Instance.GameSettings.MaxHitsCount;
         }

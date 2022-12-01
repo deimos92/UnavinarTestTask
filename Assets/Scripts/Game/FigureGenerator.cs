@@ -11,15 +11,12 @@ namespace UnavinarTestTask.Assets.Scripts.Game
 
             int XcenterIndex = xFigureSize / 2;
             int ZcenterIndex = zFigureSize / 2;
-
-
-            //core
+            
             for (int height = 0; height < yFigureSize; height++)
             {
                 playerFigure[XcenterIndex, height, ZcenterIndex] = 1;
             }
-
-            //branches
+            
             for (int branchIndex = 0; branchIndex < branchesCount; branchIndex++)
             {
                 var direction = DirectionToVector(GetRandomDirection());

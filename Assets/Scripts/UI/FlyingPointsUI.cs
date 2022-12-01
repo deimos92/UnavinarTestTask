@@ -6,20 +6,13 @@ namespace UnavinarTestTask.Assets.Scripts.UI
 {
     public class FlyingPointsUI : UILayer
     {
-        //public static FlyingPointsUI Instance {get; private set;}        
-
         [SerializeField]
         private TextMeshProUGUI _pointsTextPrefab;
 
         const int POOL_SIZE = 64;
 
         private Queue<TextMeshProUGUI> _pointsTextPool = new Queue<TextMeshProUGUI>();
-        private List<ActiveText> _activeText = new List<ActiveText>();
-
-        private void Awake()
-        {
-            //Instance = this;
-        }
+        private List<ActiveText> _activeText = new List<ActiveText>();        
 
         private Camera _camera;
         private Transform _canvasTransform;

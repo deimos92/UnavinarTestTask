@@ -11,7 +11,6 @@ namespace UnavinarTestTask
         public ResultLayer Result;
         public FlyingPointsUI FlyingPoints;
 
-
         private void Awake()
         {
             Instance = this;           

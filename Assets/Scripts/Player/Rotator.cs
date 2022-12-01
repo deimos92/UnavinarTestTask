@@ -10,13 +10,26 @@ namespace UnavinarTestTask.Assets.Scripts.Player
         private Transform _objectToRotate;
         private float _rotationSpeed;
 
-        private void Awake()
+        private void OnEnable()
         {
-            _objectToRotate = transform;
-            _rotationSpeed = Level.Instance.GameSettings.RotationSpeed;
-
             SwipeDetection.OnSwipeLeft += SwipeDetection_OnSwipeLeft;
             SwipeDetection.OnSwipeRight += SwipeDetection_OnSwipeRight;
+        }
+
+        private void Awake()
+        {
+            _objectToRotate = transform;            
+        }
+
+        private void Start()
+        {
+            _rotationSpeed = Level.Instance.GameSettings.RotationSpeed;
+        }
+
+        private void OnDisable()
+        {
+            SwipeDetection.OnSwipeLeft -= SwipeDetection_OnSwipeLeft;
+            SwipeDetection.OnSwipeRight -= SwipeDetection_OnSwipeRight;
         }
 
         private void SwipeDetection_OnSwipeRight()
