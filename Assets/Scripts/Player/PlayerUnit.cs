@@ -8,12 +8,11 @@ namespace UnavinarTestTask.Assets.Scripts.Player
     {
         private int _hitsCount;
         private int _maxHitsCount;
-
-        public static event Action OnHit;
         
+        public static event Action OnHit;       
 
         private void Awake()
-        {
+        {            
             _maxHitsCount = Level.Instance.GameSettings.MaxHitsCount;
         }
 

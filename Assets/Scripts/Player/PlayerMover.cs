@@ -9,7 +9,7 @@ namespace UnavinarTestTask.Assets.Scripts.Player
         private Vector3 _direction;
 
         [SerializeField]
-        private float _acceleration = 0.2f;
+        private float _acceleration = 0.01f;
                 
         private static float _currentVelocity;
         public static float CurrentVelocity => _currentVelocity;
@@ -54,18 +54,27 @@ namespace UnavinarTestTask.Assets.Scripts.Player
             else
             {
                 PlayerFigure_OnFinish();
-            }
-            Debug.Log(_currentVelocity);
+            }            
         }
 
         private void Accelerating()
         {
-            if (_currentVelocity < Level.Instance.GameSettings.PlayerMaxSpeed)
+            if (PointsCounter.CurrentMultiplier > 1)
             {
-                _currentVelocity += (_acceleration * Time.deltaTime) / 2;
+                if (_currentVelocity < (Level.Instance.GameSettings.PlayerMaxSpeed * PointsCounter.CurrentMultiplier)/2)
+                {
+                    _currentVelocity += (_acceleration * Time.fixedDeltaTime) / 2;
+                }
             }
-            
-            transform.position += new Vector3(0, 0, 1) * _currentVelocity;
+            else
+            {
+                if (_currentVelocity < Level.Instance.GameSettings.PlayerMaxSpeed)
+                {
+                    _currentVelocity += (_acceleration * Time.fixedDeltaTime) / 2;
+                }
+            }                        
+
+            transform.position += Vector3.forward * _currentVelocity;
         }
 
         private void ShortStopAndRebound()

@@ -3,7 +3,7 @@ using Cinemachine;
 
 namespace UnavinarTestTask.Assets.Scripts.Game
 {
-    [DefaultExecutionOrder(-1)]
+    //[DefaultExecutionOrder(-1)]
     public class EntityPlacer : MonoBehaviour
     {
         [SerializeField]
@@ -19,14 +19,8 @@ namespace UnavinarTestTask.Assets.Scripts.Game
         private GameObject _fieldPrefab;
 
         [SerializeField]
-        private CinemachineVirtualCamera _cinemachineVirtualCamera;
-
-        private GameSettings _gameSettings;
-
-        private void Awake()
-        {
-            _gameSettings = Level.Instance.GameSettings;
-        }
+        private CinemachineVirtualCamera _cinemachineVirtualCamera;       
+        
 
         private void Start()
         {
@@ -35,16 +29,17 @@ namespace UnavinarTestTask.Assets.Scripts.Game
 
         private void SetupOther()
         {
+            var settings = Level.Instance.GameSettings;
             var playerInstance = Instantiate(_playerPrefab, transform);            
             var fieldInstance = Instantiate(_fieldPrefab, transform);
 
             var finishInstance = Instantiate(_finishPrefab, transform);
-            finishInstance.transform.localPosition = new Vector3(0, 0, _gameSettings.FieldLenght - 7);
+            finishInstance.transform.localPosition = new Vector3(0, 0, settings.FieldLenght - 7);
 
-            PlaceGates(_gameSettings.GatesCount, _gameSettings.FieldLenght);
+            PlaceGates(settings.GatesCount, settings.FieldLenght);
 
             _cinemachineVirtualCamera.Follow = playerInstance.transform;
-            _cinemachineVirtualCamera.LookAt = playerInstance.transform;
+            _cinemachineVirtualCamera.LookAt = playerInstance.transform;            
         }
 
         private void PlaceGates(int gatesCount, float fieldLenght)

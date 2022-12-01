@@ -10,7 +10,11 @@ namespace UnavinarTestTask.Assets.Scripts.Entities
 
         private void Awake()
         {
-            _animation= GetComponent<Animation>();
+            _animation= GetComponent<Animation>();            
+        }
+
+        private void Start()
+        {
             _gateParent = GetComponentInParent<Gate>();
             _gateParent.OnCrossing += _gateParent_OnCrossing;
         }

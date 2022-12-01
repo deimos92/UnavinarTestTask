@@ -39,7 +39,7 @@ namespace UnavinarTestTask.Assets.Scripts.Entities
             if (other.gameObject.layer == 7)
             {
                 OnCrossing?.Invoke();
-                Level.Instance.gameObject.GetComponent<PointsCounter>()?.CrossingGate();
+                PointsCounter.CrossingGate();
                 _collider.enabled = false;
             }            
         }

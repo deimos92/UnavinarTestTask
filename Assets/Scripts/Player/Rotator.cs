@@ -36,7 +36,7 @@ namespace UnavinarTestTask.Assets.Scripts.Player
 
             while (true)
             {
-                float step = _rotationSpeed * Time.deltaTime;
+                float step = _rotationSpeed * Time.fixedDeltaTime;
                 if (currentAngle + step > targetAngle)
                 {
                     step = targetAngle - currentAngle;

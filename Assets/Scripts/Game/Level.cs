@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace UnavinarTestTask.Assets.Scripts.Game
 {
-    [DefaultExecutionOrder(-2)]
+    //[DefaultExecutionOrder(-2)]
     public class Level : MonoBehaviour
     {
         [SerializeField]
@@ -31,11 +31,18 @@ namespace UnavinarTestTask.Assets.Scripts.Game
                 Debug.Log("More than one Game in scene!");
                 return;
             }
-            _instance = this;
+            _instance = this;            
+        }
 
+        private void Start()
+        {
             _playerFigureArray = FigureGenerator.GeneratePlayerFigureArray(_gameSettings.GateWidth - 2, _gameSettings.PlayerHeight, _gameSettings.GateWidth - 2, _gameSettings.BranchesCount);
             _barriersArrays = FigureGenerator.MakeBarriersArrays(_playerFigureArray);
             _gateArray = FigureGenerator.MakeGateArray(_gameSettings.GateWidth, _gameSettings.PlayerHeight + 1);
+
+            LevelUI.Instance.Gameplay.Open();
+            LevelUI.Instance.Gameplay.ShowLevel(14);
+            LevelUI.Instance.FlyingPoints.Open();
         }
     }
 }
